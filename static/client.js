@@ -86,6 +86,11 @@ function createOffer(username, channel_name) {
         peerConnection.addTrack(track, localStream)
     });
 
+    setOnTrack(peerConnection);
+    mapPeers[username] = [peerConnection, pc];
+
+
+
     let pc = peerConnection.createDataChannel('channel')
     pc.addEventListener('open', ev => {
         console.log('Peer connection opened')
@@ -96,16 +101,39 @@ function createOffer(username, channel_name) {
     mapPeers[username] = [peerConnection, pc]
 
     peerConnection.addEventListener('iceconnectionstatechange', (e) => {
-        let iceConnectionState = peerConnection.iceConnectionState
-        if (iceConnectionState === 'field' ||
-            iceConnectionState === 'disconnected' ||
-            iceConnectionState === 'closed') {
-            delete mapPeers[username]
+        let iceConnectionState = peerConnection.iceConnectionState  //3 odam uchun o'zgartirish kerak
+        // if (iceConnectionState === 'field' ||
+        //     iceConnectionState === 'disconnected' ||
+        //     iceConnectionState === 'closed') {
+        //     delete mapPeers[username]
+        //     if (iceConnectionState !== 'closed') {
+        //         peerConnection.close()
+        //     }
+        //     acceptDiv.style.display = 'none';
+        // }
+
+
+
+    if (
+        iceConnectionState === 'failed' ||
+        iceConnectionState === 'disconnected' ||
+        iceConnectionState === 'closed'
+    ) {
+        const peers = mapPeers[username];
+        
+        if (peers) {
+            // Uch odam uchun o'zgartirishlar
+            delete mapPeers[username];
+
+            // Uch odam uchun o'zgartirishlarni boshqarish
             if (iceConnectionState !== 'closed') {
-                peerConnection.close()
+                peerConnection.close();
             }
+
+            // Boshqa o'zgartirishlar
             acceptDiv.style.display = 'none';
         }
+    }
     })
 
     peerConnection.addEventListener('icecandidate', (event) => {
