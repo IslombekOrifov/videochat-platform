@@ -88,48 +88,48 @@ function connect() {
 
 
 function onmessage(msg) {
-    // let content = JSON.parse(msg.data);
-    // let data = content.data
-    // // console.log(content)
-    // if (content.peer === username) {
-    //     return;
-    // }
-
-    // switch (content.event) {
-    //     case "offer":
-    //         handleOffer(data)
-    //         console.log('offer')
-    //         break;
-    //     case "answer":
-    //         handleAnswer(data)
-    //         console.log('answer')
-    //         break;
-    //     case "candidate":
-    //         handleCandidate(data)
-    //         console.log('candidate')
-    //         break;
-    //     default:
-    //         break;
-    // }
     let content = JSON.parse(msg.data);
-    let data = content.data;
+    let data = content.data
+    // console.log(content)
     if (content.peer === username) {
         return;
     }
 
     switch (content.event) {
         case "offer":
-            handleOffer(data);
+            handleOffer(data)
+            console.log('offer')
             break;
         case "answer":
-            handleAnswer(data);
+            handleAnswer(data)
+            console.log('answer')
             break;
         case "candidate":
-            handleCandidate(data);
+            handleCandidate(data)
+            console.log('candidate')
             break;
         default:
             break;
     }
+    // let content = JSON.parse(msg.data);
+    // let data = content.data;
+    // if (content.peer === username) {
+    //     return;
+    // }
+
+    // switch (content.event) {
+    //     case "offer":
+    //         handleOffer(data);
+    //         break;
+    //     case "answer":
+    //         handleAnswer(data);
+    //         break;
+    //     case "candidate":
+    //         handleCandidate(data);
+    //         break;
+    //     default:
+    //         break;
+    // }
 }
 
 
