@@ -1,21 +1,53 @@
+
 .container {
-    background: rgb(148, 144, 144);
-    margin: 50px auto;
+    background: rgb(52, 50, 50);
+    margin: 8% auto;
     max-width: 80%;
     text-align: center;
     padding: 2%;
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+h1{
+    color: white;
+    font-weight: bold;
+    padding-bottom: 4%;  
+}
+
+#username {
+    width: 70%;
+    margin: auto;
+    padding: 3%;
+    border: black;
+    border-radius: 15px;
+}
+#username:hover{
+    box-shadow: 0 8px 16px 0 rgba(4, 4, 4, 0.2), 0 6px 20px 0 rgba(255, 254, 254, 0.19);
+
+}
+#username::placeholder{
+    font-size: 20px;
+    margin: auto;
+    align-items: center;
+}
 button {
     margin: 1em;
+    width: 20%;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10%;
+
 }
 
-input {
-    margin-top: 1em;
-}
+
 
 #btnCreateChat, #acceptDiv, #div_message {
-    display: none
+    display: none;
+    margin: 2% auto;
+    width: 20%;
+    
 }
 
 .footer {

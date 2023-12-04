@@ -9,9 +9,10 @@
 </head>
 
 <body>
+  
 <h1>Video chat Django</h1>
 <h3 id="newUser"></h3>
-<input type="text" id="username"/>
+<input type="text" id="username" />
 <button id="connectButton">Connect</button>
 
 <button id="btnCreateChat" style="display: none">Create chat</button>
@@ -21,6 +22,7 @@
   <video autoplay="true" width="200" id="myVideo"></video>
   <button id="getMedia">Turn on camera</button>
 </p>
+
 
 <div>
   <input type="text" id="calleeName"/>
@@ -36,6 +38,8 @@
     <button id="declineButton">Decline</button>
 </div>
 <script src="{% static 'testRTS.js' %}"></script>
+<script src="{% static 'client_rtc.js' %}"></script>
+
 </body>
 
 </html>
