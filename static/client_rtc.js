@@ -74,8 +74,8 @@ function connect() {
         return;
     }
     let roomName = 'test'; // Update this dynamically based on the room you want to join.
-    let conn = new WebSocket(`wss://55fb-178-218-200-199.ngrok-free.app/chat/${roomName}/${username}`);
-    conn.addEventListener('open', () => {
+    let conn = new WebSocket(`wss://5e29-178-218-200-199.ngrok-free.app/chat/${roomName}/${username}`);
+    conn.addEventListener('open', (e) => {
         console.log("Connected to the signaling server");
         initialize(username);
     });
