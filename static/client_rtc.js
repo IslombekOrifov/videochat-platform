@@ -13,7 +13,7 @@ let username = ''
 let peerConnection;
 let dataChannel;
 let input = document.getElementById("messageInput");
-let remoteStreams = {};
+// let remoteStreams = {};
 
 // let callVideo = document.querySelector('#callVideo');
 
