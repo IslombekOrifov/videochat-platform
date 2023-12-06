@@ -35,6 +35,7 @@
     </div>
     <div class="col-lg-6">
       <div id="acceptDiv">
+        
         <p>Caller: </p>
         <video autoplay="true" width="200" id="callVideo"></video>
         {#    <button id="acceptButton">Accept</button>#}
@@ -45,7 +46,11 @@
       <button type="button" class="btn btn-success" id="getMedia">Turn on camera</button>
     </div>
   </div>
+  <div id="videoContainer">
+
+  </div>
   <script src="{% static 'client_rtc.js' %}"></script>
+  {% comment %} <script src="{% static 'client_rtc_new.js' %}"></script> {% endcomment %}
 
 </div>
 <div class="footer">Django School 2021</div>
